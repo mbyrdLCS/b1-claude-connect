@@ -1,0 +1,8 @@
+{
+  "name": "b1-claude-connect-bridge",
+  "private": true,
+  "description": "Bridge from the Claude desktop app to the B1 (ChurchApps) MCP server",
+  "dependencies": {
+    "mcp-remote": "0.15.2"
+  }
+}

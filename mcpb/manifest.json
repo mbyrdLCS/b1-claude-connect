@@ -1,0 +1,39 @@
+{
+  "manifest_version": "0.3",
+  "name": "b1-churchapps",
+  "display_name": "B1 (ChurchApps)",
+  "version": "1.0.0",
+  "description": "Connect your church's B1 / ChurchApps data to Claude.",
+  "long_description": "Lets Claude work with your church's B1 data — people, groups, attendance, giving, forms, website content and more — through ChurchApps' official MCP server (https://api.churchapps.org/mcp).\n\nYou'll need a B1 API key: in B1Admin, logged in as yourself, create an API key, then paste it in this extension's settings. Claude can only do what that key allows.",
+  "author": { "name": "ChurchApps", "url": "https://churchapps.org" },
+  "repository": { "type": "git", "url": "https://github.com/mbyrdLCS/b1-claude-connect.git" },
+  "homepage": "https://github.com/mbyrdLCS/b1-claude-connect",
+  "support": "https://github.com/ChurchApps/ChurchAppsSupport/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/node_modules/mcp-remote/dist/proxy.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/node_modules/mcp-remote/dist/proxy.js",
+        "https://api.churchapps.org/mcp",
+        "--header",
+        "Authorization:Bearer ${user_config.api_key}"
+      ]
+    }
+  },
+  "tools_generated": true,
+  "keywords": ["b1", "churchapps", "church", "chms"],
+  "license": "MIT",
+  "compatibility": { "platforms": ["darwin", "win32", "linux"], "runtimes": { "node": ">=18.0.0" } },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "B1 API key",
+      "description": "Create one in B1Admin (logged in as yourself). Stored securely by the Claude app.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

@@ -6,16 +6,25 @@ This uses the B1 MCP server that ChurchApps runs at `https://api.churchapps.org/
 
 | Where you use Claude | Works? | How |
 |---|---|---|
-| **Claude desktop app** (Mac / Windows) | ✅ | Run the installer below |
+| **Claude desktop app** (Mac / Windows) | ✅ | Double-click the extension below (easiest), or run the installer |
 | **Claude Code** (terminal) | ✅ | One command, below |
-| **claude.ai in a browser / phone app** | ❌ not yet | B1's server needs to add sign-in (OAuth) first |
+| **claude.ai in a browser / phone app** | ❌ not yet | B1's server needs to add sign-in (OAuth) first ([#1318](https://github.com/ChurchApps/ChurchAppsSupport/issues/1318)) |
+| **ChatGPT** | ❌ not yet | Same — ChatGPT connectors also sign in with OAuth |
 
 ## 1. Get a B1 API key
 Log into **B1Admin as yourself** and create an API key. Give it only the areas you want Claude to use (for example *content* for website pages, *people* and *groups* for membership).
 
 The key works only for your church, and only with the permissions you choose. Treat it like a password; you can delete it in B1Admin any time.
 
-## 2a. Claude desktop app
+## 2a. Claude desktop app — easiest: one-click extension
+
+1. Download **`b1-churchapps.mcpb`** from the [latest release](https://github.com/mbyrdLCS/b1-claude-connect/releases/latest).
+2. Double-click it (or in Claude: **Settings → Extensions → Advanced settings → Install Extension…**) and click **Install**.
+3. Paste your B1 API key when asked. The Claude app stores it securely; it's never in this repo or the extension file.
+
+Nothing else to install — the Claude app brings its own Node.js. To build the extension yourself: `sh scripts/build-mcpb.sh` → `dist/b1-churchapps.mcpb`.
+
+## 2b. Claude desktop app — installer script (alternative)
 
 You need [Node.js](https://nodejs.org) (LTS) installed; the Claude app uses a small bridge (`mcp-remote`) to reach B1.
 
@@ -49,7 +58,7 @@ Add this to `claude_desktop_config.json` (Mac: `~/Library/Application Support/Cl
 On a Mac, if Claude can't find `npx`, use its full path (run `which npx`).
 </details>
 
-## 2b. Claude Code
+## 2c. Claude Code
 ```bash
 claude mcp add --scope user --transport http b1 https://api.churchapps.org/mcp --header "Authorization: Bearer YOUR_KEY"
 ```
