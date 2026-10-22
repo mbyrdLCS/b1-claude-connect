@@ -14,9 +14,7 @@ Ask Claude about your church's **B1 / ChurchApps** data in plain English — loo
 | 2 | **A Claude account**, signed in to the app. We recommend **Claude Pro** — free accounts run out of messages quickly. | Sign up / upgrade: **[claude.ai](https://claude.ai)** |
 | 3 | **Your B1 login** with permission to create an API key | **[admin.b1.church](https://admin.b1.church)** |
 
-> 📱 **Using Claude on a phone or in a web browser?** That doesn't work yet — it's coming. For now, use the Claude app on a computer.
->
-> 💬 **Using ChatGPT?** Not yet either — also coming.
+> 📱 **Using Claude in a web browser or on your phone, or using ChatGPT?** Skip the key: jump to **[Sign in with B1 (web, phone, ChatGPT)](#sign-in-with-b1-web-phone-chatgpt)**. You just paste one web address and log in with your B1 account.
 
 ---
 
@@ -72,6 +70,32 @@ The first time, Claude asks permission to use B1 — click **Allow**. Claude alw
 
 ---
 
+## Sign in with B1 (web, phone, ChatGPT)
+
+No key and no download: you add B1 by its web address and log in with your B1 account. You choose which church and what Claude or ChatGPT may do on B1's sign-in screen.
+
+**B1's address:** `https://api.churchapps.org/mcp`
+
+### Claude (claude.ai, phone app, and desktop app)
+1. On **[claude.ai](https://claude.ai)**, open **Settings → Connectors** and click **Add custom connector**.
+2. Name it `B1`, paste `https://api.churchapps.org/mcp`, and click **Add**.
+3. Click **Connect**. A B1 sign-in page opens: log in, pick your church and what to allow, and approve.
+4. In a chat, turn **B1** on from the tools menu and ask away. It also shows up in the Claude phone and desktop apps on the same account.
+
+Custom connectors need a paid Claude plan (Pro or higher); on Team/Enterprise plans an admin may need to add it first.
+
+### ChatGPT
+1. In ChatGPT, open **Settings → Apps & Connectors → Advanced settings** and turn on **Developer mode**.
+2. Back in **Apps & Connectors**, click **Create**, name it `B1`, and paste `https://api.churchapps.org/mcp` as the server URL.
+3. For authentication choose **OAuth**, then create it and sign in with your B1 account when asked.
+4. In a new chat, pick **B1** from the tools/connectors menu.
+
+Developer mode is available on paid ChatGPT plans; menu names can shift a little as ChatGPT updates.
+
+🔒 To turn it off, remove the connector in Claude or ChatGPT. Signing in this way never shares your B1 password with Claude or ChatGPT.
+
+---
+
 ## Questions
 
 **Is my church's data safe?**
@@ -124,8 +148,8 @@ On a Mac, if Claude can't find `npx`, use its full path (`which npx`).
 ### Build the extension
 `sh scripts/build-mcpb.sh` → `dist/b1-churchapps.mcpb`
 
-### Web, phone and ChatGPT
-claude.ai (web/mobile) and ChatGPT connectors sign in with OAuth, which the B1 server doesn't support yet — see [ChurchApps/ChurchAppsSupport#1318](https://github.com/ChurchApps/ChurchAppsSupport/issues/1318).
+### Web, phone and ChatGPT (OAuth)
+The B1 MCP server supports OAuth 2.1 sign-in (Protected Resource Metadata at `/.well-known/oauth-protected-resource`, Dynamic Client Registration, PKCE S256; consent screen in B1Admin), so claude.ai, the Claude apps and ChatGPT can add it as a custom connector by URL. Added in [ChurchApps/ChurchAppsSupport#1318](https://github.com/ChurchApps/ChurchAppsSupport/issues/1318). Scopes include `workflows:read` / `workflows:write`.
 
 ### Tips
 - Claude reads B1's endpoint list itself (`list_endpoints`, `describe_endpoint`), so you don't need to know the API.
