@@ -1,10 +1,8 @@
 {
   "name": "b1-claude-connect-bridge",
   "private": true,
-  "type": "module",
-  "description": "Bridge from the Claude desktop app to the B1 (ChurchApps) MCP server, with FreePlay (lessons.church) folded in",
+  "description": "Bridge from the Claude desktop app to the B1 (ChurchApps) MCP server",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.32.2",
-    "zod": "3.25.76"
+    "mcp-remote": "0.15.2"
   }
 }

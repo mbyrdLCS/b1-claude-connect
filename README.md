@@ -51,10 +51,8 @@ The key is what lets Claude talk to *your* church's B1. Think of it like a passw
 1. **[Click here to download the B1 extension](https://github.com/mbyrdLCS/b1-claude-connect/releases/latest/download/b1-churchapps.mcpb)** (`b1-churchapps.mcpb`).
 2. **Double-click** the downloaded file. Claude opens and shows **B1 (ChurchApps)**.
 3. Click **Install**.
-4. When it asks for your **B1 API key**, paste the key from Step 2.
-5. **Using FreePlay?** Also enter your **B1 email** and **B1 password**. FreePlay (lessons.church) doesn't accept API keys, so Claude signs in to it as you. Not using FreePlay? Leave these two empty — everything else works with just the key.
-6. Click **Save**.
-7. **Quit Claude completely** (Mac: **Cmd+Q** · Windows: right-click the Claude icon in the taskbar → **Quit**) and open it again.
+4. When it asks for your **B1 API key**, paste the key from Step 2 and save.
+5. **Quit Claude completely** (Mac: **Cmd+Q** · Windows: right-click the Claude icon in the taskbar → **Quit**) and open it again.
 
 > Didn't open when you double-clicked? In Claude go to **Settings → Extensions → Advanced settings → Install Extension…** and choose the downloaded file.
 
@@ -118,7 +116,7 @@ Ask for help at **[ChurchApps support](https://github.com/ChurchApps/ChurchAppsS
 <summary><b>For tech helpers</b> — Claude Code, installer scripts, manual setup, building the extension</summary>
 
 ### What this is
-B1's MCP server is run by ChurchApps at `https://api.churchapps.org/mcp` and uses your B1 API key as a `Bearer` token. The extension runs a small local server (`mcpb/server/index.js`) that forwards every B1 tool call there with the key, and sends `api_call` paths under `/lessons/*` straight to FreePlay's API (`https://api.lessons.church`) using a token from the optional B1 email + password — lessons.church only accepts login tokens, not API keys. Claude sees one set of tools: `list_endpoints` includes FreePlay's routes, generated from LessonsApi into `mcpb/server/lessons-routes.json`. The Claude desktop app supplies Node.js, so nothing extra is installed.
+B1's MCP server is run by ChurchApps at `https://api.churchapps.org/mcp` and uses your B1 API key as a `Bearer` token. It covers B1 and FreePlay (lessons.church, under `/lessons/*`) with the same key. The extension bundles [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) so the Claude desktop app can reach it with no separate Node.js install.
 
 ### Claude Code
 ```bash

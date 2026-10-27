@@ -2,9 +2,9 @@
   "manifest_version": "0.3",
   "name": "b1-churchapps",
   "display_name": "B1 (ChurchApps)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Connect your church's B1 and FreePlay (ChurchApps) data to Claude.",
-  "long_description": "Lets Claude work with your church's B1 data — people, groups, attendance, giving, forms, website content, FreePlay lessons and classrooms, and more — through ChurchApps' official MCP server (https://api.churchapps.org/mcp).\n\nYou'll need a B1 API key: in B1Admin, logged in as yourself, create an API key, then paste it in this extension's settings. Claude can only do what that key allows.\n\nFor FreePlay, also enter your B1 email and password — lessons.church signs in as you, so Claude can do there only what your own login can.",
+  "long_description": "Lets Claude work with your church's B1 data — people, groups, attendance, giving, forms, website content, FreePlay lessons and classrooms, and more — through ChurchApps' official MCP server (https://api.churchapps.org/mcp).\n\nYou'll need a B1 API key: in B1Admin, logged in as yourself, create an API key, then paste it in this extension's settings. Claude can only do what that key allows.",
   "author": { "name": "ChurchApps", "url": "https://churchapps.org" },
   "repository": { "type": "git", "url": "https://github.com/mbyrdLCS/b1-claude-connect.git" },
   "homepage": "https://github.com/mbyrdLCS/b1-claude-connect",
@@ -12,15 +12,15 @@
   "icon": "icon.png",
   "server": {
     "type": "node",
-    "entry_point": "server/index.js",
+    "entry_point": "server/node_modules/mcp-remote/dist/proxy.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/server/index.js"],
-      "env": {
-        "B1_API_KEY": "${user_config.api_key}",
-        "B1_EMAIL": "${user_config.email}",
-        "B1_PASSWORD": "${user_config.password}"
-      }
+      "args": [
+        "${__dirname}/server/node_modules/mcp-remote/dist/proxy.js",
+        "https://api.churchapps.org/mcp",
+        "--header",
+        "Authorization:Bearer ${user_config.api_key}"
+      ]
     }
   },
   "tools_generated": true,
@@ -34,19 +34,6 @@
       "description": "Create one in B1Admin (logged in as yourself). Stored securely by the Claude app.",
       "sensitive": true,
       "required": true
-    },
-    "email": {
-      "type": "string",
-      "title": "B1 email (for FreePlay)",
-      "description": "Optional. Only needed for FreePlay lessons and classrooms — lessons.church doesn't accept API keys, so it signs in as you.",
-      "required": false
-    },
-    "password": {
-      "type": "string",
-      "title": "B1 password (for FreePlay)",
-      "description": "Optional. Used only to sign in to lessons.church. Stored securely by the Claude app.",
-      "sensitive": true,
-      "required": false
     }
   }
 }
