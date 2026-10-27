@@ -1,0 +1,872 @@
+[
+ {
+  "method": "GET",
+  "path": "/lessons/",
+  "controller": "HealthController.root"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/",
+  "controller": "HealthController.health"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/actions",
+  "controller": "ActionController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/actions/:id",
+  "controller": "ActionController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/actions/:id",
+  "controller": "ActionController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/actions/public/feed/:id",
+  "controller": "ActionController.getPublicFeed"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/actions/public/lesson/:lessonId",
+  "controller": "ActionController.getForLesson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/actions/role/:roleId",
+  "controller": "ActionController.getForRole"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/addOnPlaylistItems",
+  "controller": "AddOnPlaylistItemController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/addOnPlaylistItems/:id",
+  "controller": "AddOnPlaylistItemController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOnPlaylistItems/:id",
+  "controller": "AddOnPlaylistItemController.get"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/addOnPlaylists",
+  "controller": "AddOnPlaylistController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/addOnPlaylists/:id",
+  "controller": "AddOnPlaylistController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOnPlaylists/:id",
+  "controller": "AddOnPlaylistController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOns",
+  "controller": "AddOnController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/addOns",
+  "controller": "AddOnController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/addOns/:id",
+  "controller": "AddOnController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOns/:id",
+  "controller": "AddOnController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOns/public",
+  "controller": "AddOnController.loadPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/addOns/public/:id",
+  "controller": "AddOnController.loadPublicById"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/assets",
+  "controller": "AssetController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/assets/:id",
+  "controller": "AssetController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/assets/:id",
+  "controller": "AssetController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/assets/content/:contentType/:contentId",
+  "controller": "AssetController.getForContent"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/assets/resourceId/:resourceId",
+  "controller": "AssetController.getForResource"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/assets/resourceIds",
+  "controller": "AssetController.getForResourceIds"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/bundles",
+  "controller": "BundleController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/bundles/:id",
+  "controller": "BundleController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/bundles/:id",
+  "controller": "BundleController.get"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/bundles/:id/rezip",
+  "controller": "BundleController.rezip"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/bundles/available",
+  "controller": "BundleController.getAvailable"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/bundles/content/:contentType/:contentId",
+  "controller": "BundleController.getForContent"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/bundles/queue/clear-stuck",
+  "controller": "BundleController.clearStuckBundles"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/bundles/queue/health",
+  "controller": "BundleController.getQueueHealth"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/bundles/zip",
+  "controller": "BundleController.zipAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms",
+  "controller": "ClassroomController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/classrooms",
+  "controller": "ClassroomController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/classrooms/:id",
+  "controller": "ClassroomController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/:id",
+  "controller": "ClassroomController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/person",
+  "controller": "ClassroomController.getForPerson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/player/:churchId",
+  "controller": "ClassroomController.getInstructions"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/playlist/:classroomId",
+  "controller": "ClassroomController.getPlaylist"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/playlistNew/:classroomId",
+  "controller": "ClassroomController.getPlaylistNew"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/public/church/:churchId",
+  "controller": "ClassroomController.getForChurch"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/classrooms/public/tree/:churchId",
+  "controller": "ClassroomController.getPublicTree"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/customizations",
+  "controller": "CustomizationController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/customizations/:id",
+  "controller": "CustomizationController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/customizations/:id",
+  "controller": "CustomizationController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/customizations/public/venue/:venueId/:churchId",
+  "controller": "CustomizationController.getPublicForVenue"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/customizations/venue/:venueId",
+  "controller": "CustomizationController.getForVenue"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/downloads",
+  "controller": "DownloadController.save"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/downloads/:programId/churches",
+  "controller": "DownloadController.programChurches"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/downloads/:programId/geo",
+  "controller": "DownloadController.geoData"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/downloads/:programId/studies",
+  "controller": "DownloadController.programStudies"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders",
+  "controller": "ExternalProviderController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/externalProviders",
+  "controller": "ExternalProviderController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/externalProviders/:id",
+  "controller": "ExternalProviderController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/:id",
+  "controller": "ExternalProviderController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/:id/lessons",
+  "controller": "ExternalProviderController.getPublicLessons"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/:id/venue/:venueId",
+  "controller": "ExternalProviderController.getPublicExternal"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/:id/venue/:venueId/actions",
+  "controller": "ExternalProviderController.getPublicActions"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/:id/venue/:venueId/planItems",
+  "controller": "ExternalProviderController.getPublicPlanItems"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalProviders/playlist/:externalProviderId/:programId/:studyId/:lessonId/:venueId",
+  "controller": "ExternalProviderController.getExternalPlaylist"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/externalVideos",
+  "controller": "ExternalVideoController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/externalVideos/:id",
+  "controller": "ExternalVideoController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalVideos/:id",
+  "controller": "ExternalVideoController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalVideos/content/:contentType/:contentId",
+  "controller": "ExternalVideoController.getForContent"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalVideos/download/:id",
+  "controller": "ExternalVideoController.downloadRedirect"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/externalVideos/public/:id",
+  "controller": "ExternalVideoController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/favicon.ico",
+  "controller": "HealthController.favicon"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/files",
+  "controller": "FileController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/files",
+  "controller": "FileController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/files/:id",
+  "controller": "FileController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/files/:id",
+  "controller": "FileController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/files/cleanup",
+  "controller": "FileController.getCleanup"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/files/postUrl",
+  "controller": "FileController.getUploadUrl"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/files/postUrl/content/:contentType/:contentId",
+  "controller": "FileController.getUploadUrManual"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/ipDetails/lookup",
+  "controller": "IpDetailController.save"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons",
+  "controller": "LessonController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/lessons",
+  "controller": "LessonController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/lessons/:id",
+  "controller": "LessonController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/:id",
+  "controller": "LessonController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/:id",
+  "controller": "LessonController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/actionTree",
+  "controller": "LessonController.getPublicActionTree"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/ids",
+  "controller": "LessonController.getPublicByIds"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/slug/:programSlug/:studySlug/:slug",
+  "controller": "LessonController.getPublicBySlug"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/slugAlt/:programSlug/:studySlug/:slug",
+  "controller": "LessonController.getPublicBySlugAlt"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/studies",
+  "controller": "LessonController.getPublicForStudies"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/study/:studyId",
+  "controller": "LessonController.getPublicForStudy"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/public/tree",
+  "controller": "LessonController.getPublicForProgram"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/lessons/study/:studyId",
+  "controller": "LessonController.getForStudy"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/pingback",
+  "controller": "PingbackController.handleVideoTranscoded"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs",
+  "controller": "ProgramController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/programs",
+  "controller": "ProgramController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/programs/:id",
+  "controller": "ProgramController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/:id",
+  "controller": "ProgramController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/provider/:providerId",
+  "controller": "ProgramController.getForProvider"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/public",
+  "controller": "ProgramController.getPublicAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/public/:id",
+  "controller": "ProgramController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/public/slug/:slug",
+  "controller": "ProgramController.getPublicBySlug"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/programs/public/tree",
+  "controller": "ProgramController.getPublicTree"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/providers",
+  "controller": "ProviderController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/providers",
+  "controller": "ProviderController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/providers/:id",
+  "controller": "ProviderController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/providers/:id",
+  "controller": "ProviderController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/providers/public",
+  "controller": "ProviderController.getPublicAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/providers/public/:id",
+  "controller": "ProviderController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/providers/stats",
+  "controller": "ProviderController.getStats"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/resources",
+  "controller": "ResourceController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/resources/:id",
+  "controller": "ResourceController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/resources/:id",
+  "controller": "ResourceController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/resources/content/:contentType/:contentId",
+  "controller": "ResourceController.getForContent"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/roles",
+  "controller": "RoleController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/roles/:id",
+  "controller": "RoleController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/roles/:id",
+  "controller": "RoleController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/roles/public/lesson/:lessonId",
+  "controller": "RoleController.getForLesson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/roles/section/:sectionId",
+  "controller": "RoleController.getForSection"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/schedules",
+  "controller": "ScheduleController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/schedules/:id",
+  "controller": "ScheduleController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/schedules/:id",
+  "controller": "ScheduleController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/schedules/classroom/:classroomId",
+  "controller": "ScheduleController.getAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/schedules/public/classroom/:classroomId",
+  "controller": "ScheduleController.getPublicClassroom"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/search/export",
+  "controller": "SearchController.export"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/sections",
+  "controller": "SectionController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/sections/:id",
+  "controller": "SectionController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/sections/copy/:sourceSectionId/:destVenueId",
+  "controller": "SectionController.copy"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/sections/public/feed/:id",
+  "controller": "SectionController.getPublicFeed"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/sections/public/lesson/:lessonId",
+  "controller": "SectionController.getForLesson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/sections/public/venue/:venueId",
+  "controller": "SectionController.getPublicForVenue"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/sections/venue/:venueId",
+  "controller": "SectionController.getForVenue"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies",
+  "controller": "StudyController.getForAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/studies",
+  "controller": "StudyController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/studies/:id",
+  "controller": "StudyController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/:id",
+  "controller": "StudyController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/program/:programId",
+  "controller": "StudyController.getForProgram"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public",
+  "controller": "StudyController.getPublicAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public/:id",
+  "controller": "StudyController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public/ids",
+  "controller": "StudyController.getPublicByIds"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public/program/:programId",
+  "controller": "StudyController.getPublicForProgram"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public/programs",
+  "controller": "StudyController.getPublicByPrograms"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studies/public/slug/:programId/:slug",
+  "controller": "StudyController.getPublicBySlug"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/studyCategories",
+  "controller": "StudyCategoryController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/studyCategories/:id",
+  "controller": "StudyCategoryController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studyCategories/:programId",
+  "controller": "StudyCategoryController.getByCategoryName"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studyCategories/categoryNames/:programId",
+  "controller": "StudyCategoryController.getCategoryNames"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/studyCategories/public/program/:programId",
+  "controller": "StudyCategoryController.getPublicForProgram"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/temp/venue/:venueId",
+  "controller": "TempController.getPublicForVenue"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/variants",
+  "controller": "VariantController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/variants/:id",
+  "controller": "VariantController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/variants/:id",
+  "controller": "VariantController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/variants/content/:contentType/:contentId",
+  "controller": "VariantController.getForContent"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/variants/createWebms",
+  "controller": "VariantController.createWebms"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/variants/resourceId/:resourceId",
+  "controller": "VariantController.getForResource"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues",
+  "controller": "VenueController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/venues",
+  "controller": "VenueController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/venues/:id",
+  "controller": "VenueController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/:id",
+  "controller": "VenueController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/lesson/:lessonId",
+  "controller": "VenueController.getForLesson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/names/classroom/:classroomId",
+  "controller": "VenueController.getNameByClassroom"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/playlist/:venueId",
+  "controller": "VenueController.getPlaylist"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/playlistNew/:venueId",
+  "controller": "VenueController.getPlaylistNew"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/:id",
+  "controller": "VenueController.getPublic"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/actions/:id",
+  "controller": "VenueController.getPublicActions"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/feed/:id",
+  "controller": "VenueController.getPublicFeed"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/images",
+  "controller": "VenueController.getPublicImages"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/lesson/:lessonId",
+  "controller": "VenueController.getPublicForLesson"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/public/planItems/:id",
+  "controller": "VenueController.getPublicPlanItems"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/venues/timeline",
+  "controller": "VenueController.getPosts"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/yearPlans",
+  "controller": "YearPlanController.getAll"
+ },
+ {
+  "method": "POST",
+  "path": "/lessons/yearPlans",
+  "controller": "YearPlanController.save"
+ },
+ {
+  "method": "DELETE",
+  "path": "/lessons/yearPlans/:id",
+  "controller": "YearPlanController.delete"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/yearPlans/:id",
+  "controller": "YearPlanController.get"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/yearPlans/public",
+  "controller": "YearPlanController.getPublicAll"
+ },
+ {
+  "method": "GET",
+  "path": "/lessons/yearPlans/public/:id",
+  "controller": "YearPlanController.getPublic"
+ }
+]
